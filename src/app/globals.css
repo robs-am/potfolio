@@ -4,6 +4,7 @@
 
 body {
   @apply bg-dark-background text-dark-foreground font-sans;
+  -webkit-font-smoothing: antialiased;
 }
 
 @media (prefers-color-scheme: dark) {

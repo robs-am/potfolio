@@ -1,0 +1,20 @@
+{
+  "links": [
+    {
+      "label": "Home",
+      "url": "#home"
+    },
+    {
+      "label": "Projetos",
+      "url": "#projects"
+    },
+    {
+      "label": "Sobre Mim",
+      "url": "#about"
+    },
+    {
+      "label": "Contato",
+      "url": "#contact"
+    }
+  ]
+}
