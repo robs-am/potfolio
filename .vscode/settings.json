@@ -1,0 +1,5 @@
+{
+"http.proxySupport": "on",
+"http.proxy": "http://your-proxy-address:port",
+"http.proxyAuthorization": "Basic <base64-encoded-username-password>"
+}

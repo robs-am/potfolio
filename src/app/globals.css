@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;400;700;800;900&display=swap');
+
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -9,8 +12,15 @@
 }
 
 body {
-  @apply bg-dark-background text-dark-foreground font-sans;
+  @apply bg-dark-background text-dark-foreground font-robotoMono font-thin;
+ 
+  
+
   -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  @apply font-light;
 }
 
 header {
@@ -33,12 +43,7 @@ header {
   }
 }
 
-@font-face {
-  font-family: 'GeistMono';
-  src: url('../../src/app/fonts/GeistMonoVF.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 
 
