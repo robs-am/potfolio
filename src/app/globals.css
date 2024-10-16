@@ -3,15 +3,12 @@
 @tailwind utilities;
 
 body {
-  background-color: theme('colors.background');
-  color: theme('colors.foreground');
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-dark-background text-dark-foreground font-sans;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: theme('colors.background');
-    color: theme('colors.foreground');
+    @apply bg-dark-background text-dark-foreground;
   }
 }
 
@@ -19,4 +16,11 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+@font-face {
+  font-family: 'GeistMono';
+  src: url('../../src/app/fonts/GeistMonoVF.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
