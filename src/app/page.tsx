@@ -3,14 +3,15 @@
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import AboutMe from '@/components/AboutMe/AboutMe';
+import { HeroSection } from '@/components/HeroSection/HeroSection';
 import { useEffect, useRef } from 'react';
-import { animateTitle, animateAboutSection } from '../lib/animations'; 
+
 
 const Portfolio = () => {
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  
+  const heroRef = useRef<HTMLHeadingElement>(null);
 
- 
+
+
   const handleScroll = () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li button');
@@ -34,37 +35,26 @@ const Portfolio = () => {
   };
 
   useEffect(() => {
-    const title = titleRef.current;
-    
 
- 
+
     window.addEventListener('scroll', handleScroll);
 
-
-    animateTitle(title);
 
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      
+
     };
   }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <AboutMe />
 
       <main className="pt-16">
-        <section id="title" className="min-h-screen flex items-center justify-center">
-          <h1
-            ref={titleRef}
-            className="text-6xl font-roboto font-thin tracking-wider text-dark-accent"
-          >
-            Welcome to My Portfolio
-          </h1>
-        </section>
-       
+        <HeroSection />
+        <AboutMe />
+
         <section id="projects" className="min-h-screen flex items-center justify-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl mb-8 text-center">My Projects</h2>
