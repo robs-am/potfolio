@@ -28,13 +28,13 @@ const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
 
       {/* Menu Mobile */}
       <div
-        className={`fixed inset-0 bg-background/95 backdrop-blur-sm flex items-center justify-center transform transition-transform duration-500 ease-in-out ${
+        className={`fixed inset-0 bg-background/95 backdrop-blur-sm flex items-center z-40 justify-center transform transition-transform duration-500 ease-in-out ${
           isMobile ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
         } md:hidden`}
         onClick={closeMenu}
       >
-        <nav className="rounded-lg p-4 flex justify-center relative w-full">
-          <ul className="flex flex-col items-center space-y-4 absolute mt-10 ">
+        <nav className="rounded-lg  p-4 flex justify-center relative w-full">
+          <ul className="flex flex-col items-center space-y-4 absolute mt-10">
             {headerData.links.map((item) => (
               <li key={item.url}>
                 <Link
