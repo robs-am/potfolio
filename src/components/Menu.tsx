@@ -9,23 +9,26 @@ interface MenuProps {
 
 const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
   return (
-    <nav className={isMobile ? 'md:hidden bg-background/95 backdrop-blur-sm' : 'hidden md:flex md:w-full'}>
-      <ul className={`flex ${isMobile ? 'flex-col space-y-4' : 'space-x-4'}`}>
-        {headerData.links.map((item) => (
-          <li key={item.url}>
-            <Link
-              href={item.url}
-              className={`text-secondary-foreground hover:text-primary transition-colors ${
-                isMobile ? 'underline-hover-effect' : ''
-              }`}
-              onClick={isMobile ? closeMenu : undefined}
-            >
-              {item.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div
+      className={`absolute inset-0 flex items-center justify-center ${isMobile ? 'block' : 'hidden'} md:hidden`}
+      onClick={closeMenu}
+    >
+      <nav className="bg-background/95 backdrop-blur-sm rounded-lg p-4">
+        <ul className="flex flex-col space-y-4">
+          {headerData.links.map((item) => (
+            <li key={item.url}>
+              <Link
+                href={item.url}
+                className="text-secondary-foreground hover:text-primary transition-colors"
+                onClick={closeMenu} // Fecha o menu ao clicar em um link
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 };
 
