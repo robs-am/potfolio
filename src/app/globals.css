@@ -5,11 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;400;700;800;900&display=swap');
 
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 body {
   @apply bg-dark-background text-dark-foreground font-robotoMono font-thin;
