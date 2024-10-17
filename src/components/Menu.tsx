@@ -40,7 +40,7 @@ const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
                 <Link
                   href={item.url}
                   className="text-secondary-foreground hover:text-primary transition-colors"
-                  onClick={closeMenu} // Fecha o menu ao clicar em um link
+                  onClick={closeMenu} 
                 >
                   {item.label}
                 </Link>
