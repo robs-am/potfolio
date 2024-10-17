@@ -2,14 +2,15 @@
 
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import AboutMe from '@/components/AboutMe/AboutMe';
 import { useEffect, useRef } from 'react';
-import { animateTitle, animateAboutSection } from '../lib/animations'; // Importa as animações
+import { animateTitle, animateAboutSection } from '../lib/animations'; 
 
 const Portfolio = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
+  
 
-  // Função para manipular a rolagem e atualizar os links de navegação
+ 
   const handleScroll = () => {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li button');
@@ -34,14 +35,14 @@ const Portfolio = () => {
 
   useEffect(() => {
     const title = titleRef.current;
-    const about = aboutRef.current;
+    
 
-    // Adiciona o listener de scroll
+ 
     window.addEventListener('scroll', handleScroll);
 
-    // Chama as animações
+
     animateTitle(title);
-    animateAboutSection(about);
+
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -52,6 +53,7 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
+      <AboutMe />
 
       <main className="pt-16">
         <section id="title" className="min-h-screen flex items-center justify-center">
@@ -62,12 +64,7 @@ const Portfolio = () => {
             Welcome to My Portfolio
           </h1>
         </section>
-        <section id="about" className="min-h-screen flex items-center justify-center bg-secondary/10">
-          <div ref={aboutRef} className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl mb-4">About Me</h2>
-            <p>Here you can write a brief introduction about yourself and your skills.</p>
-          </div>
-        </section>
+       
         <section id="projects" className="min-h-screen flex items-center justify-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl mb-8 text-center">My Projects</h2>
