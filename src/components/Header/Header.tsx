@@ -39,7 +39,7 @@ const Header = () =>  {
 
   return (
     <header
-      className={`fixed flex items-center w-full bg-background/80 backdrop-blur-sm z-50 transition-all duration-300 ${isVisible ? 'top-0' : '-top-full'}`}
+      className={`fixed flex items-center w-full  backdrop-blur-sm z-50 transition-all duration-300 ${isVisible ? 'top-0' : '-top-full'}`}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center md:justify-center">
         <Link href="/" className="flex items-center">

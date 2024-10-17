@@ -1,34 +1,53 @@
-import React, { useState } from 'react';
-import projectData from '../../data/projectData.json'; // Caminho para o arquivo JSON
+import { Check } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import projectData from "../../data/project.json";
 
-// Defina a interface dos projetos
-interface Project {
-  id: number;
+interface ProjectProps {
+  className?: string;
+  id: string;
   name: string;
   description: string;
   html_url: string;
   image: string;
+  live: string;
 }
 
-function Projects() {
-  const [projects] = useState<Project[]>(projectData); // Carregue os dados diretamente do JSON
-
+export function Projects({ className, ...props }: ProjectProps) {
   return (
-    <div className="projects-container">
-      {projects.length > 0 ? (
-        projects.map((project) => (
-          <div key={project.id} className="project-card">
-            <img src={project.image} alt={`${project.name} preview`} />
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
-            <a href={project.html_url} target="_blank" rel="noopener noreferrer">
-              Ver no GitHub
-            </a>
-          </div>
-        ))
-      ) : (
-        <p>Nenhum projeto encontrado.</p>
-      )}
+    <div className="projects-container flex flex-wrap gap-4">
+      {projectData.map((project) => (
+        <Card key={project.id} className={cn("w-[380px]", className)} {...props}>
+          <CardHeader>
+            <CardTitle>{project.name}</CardTitle>
+            <CardDescription>{project.description}</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <img src={project.image} alt={`${project.name} preview`} className="mb-2 w-full h-auto" />
+            <p className="text-sm text-muted-foreground">
+              <a href={project.html_url} target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+            </p>
+          </CardContent>
+          <CardFooter className="flex gap-4">
+            <Button className="w-full">
+              <Check className="mr-2 h-4 w-4" />
+              <a href={project.html_url} target="_blank" rel="noopener noreferrer">Ver no Github</a>
+            </Button>
+            <Button className="w-full">
+              <Check className="mr-2 h-4 w-4" />
+              <a href={project.live} target="_blank" rel="noopener noreferrer">Deploy</a>
+            </Button>
+          </CardFooter>
+        </Card>
+      ))}
     </div>
   );
 }

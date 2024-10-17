@@ -1,23 +1,26 @@
 [
   {
     "id": 1,
-    "name": "Projeto 1",
+    "name": "Shopping Cart List",
     "description": "Este é o primeiro projeto.",
     "html_url": "https://github.com/seu-usuario/projeto1",
-    "image": "/imagens/projeto1.jpg"
+    "image": "/images/product-list-project.png",
+    "live": "https://seu-usuario.github.io/projeto1"
   },
   {
     "id": 2,
     "name": "Projeto 2",
     "description": "Este é o segundo projeto.",
     "html_url": "https://github.com/seu-usuario/projeto2",
-    "image": "/imagens/projeto2.jpg"
+    "image": "/imagens/projeto2.jpg",
+    "live": "https://seu-usuario.github.io/projeto1"
   },
   {
     "id": 3,
     "name": "Projeto 3",
     "description": "Este é o terceiro projeto.",
     "html_url": "https://github.com/seu-usuario/projeto3",
-    "image": "/imagens/projeto3.jpg"
+    "image": "/imagens/projeto3.jpg",
+    "live": "https://seu-usuario.github.io/projeto1"
   }
 ]

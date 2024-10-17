@@ -16,7 +16,7 @@ const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
             <li className="px-3" key={item.url}>
               <Link
                 href={item.url}
-                className="text-secondary-foreground uppercase hover:underline hover:underline-offset-8 hover:text-dark-accent  hover transition-colors"
+                className="text-dark-primary uppercase hover:underline hover:underline-offset-8 hover:text-dark-accent  hover transition-colors"
               >
                 {item.label}
               </Link>

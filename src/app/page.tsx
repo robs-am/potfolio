@@ -4,10 +4,8 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import AboutMe from '@/components/AboutMe/AboutMe';
 import { HeroSection } from '@/components/HeroSection/HeroSection';
-import Projects from './../components/Projects/Projects';
-import { useEffect, useRef } from 'react';
-
-
+import {Projects} from '@/components/Projects/Projects'; // Verifique aqui se é importado corretamente
+import { useEffect } from 'react';
 
 const Portfolio = () => {
 
@@ -34,25 +32,20 @@ const Portfolio = () => {
   };
 
   useEffect(() => {
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-
     };
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-dark-background text-dark-primary">
       <Header />
-
       <main className="pt-16">
         <HeroSection />
         <AboutMe />
-        <Projects />
-
-       
-        <section id="contact" className="min-h-screen flex items-center justify-center bg-secondary/10">
+        <Projects id={''} name={''} description={''} html_url={''} image={''} live={''} /> 
+        <section id="contact" className="min-h-screen flex items-center justify-center ">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl mb-4">Contact Me</h2>
             <p>You can add your contact information or a contact form here.</p>
