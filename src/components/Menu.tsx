@@ -3,8 +3,8 @@ import Link from 'next/link';
 import headerData from '../data/headerData.json';
 
 interface MenuProps {
-  isMobile: boolean;  // Define o tipo da prop isMobile como boolean
-  closeMenu: () => void; // Define o tipo da prop closeMenu como uma função sem parâmetros
+  isMobile: boolean; 
+  closeMenu: () => void; 
 }
 
 const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
@@ -36,7 +36,7 @@ const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
                   <Link
                     href={item.url}
                     className="text-secondary-foreground hover:text-primary transition-colors"
-                    onClick={closeMenu} // Fecha o menu ao clicar em um link
+                    onClick={closeMenu} 
                   >
                     {item.label}
                   </Link>
