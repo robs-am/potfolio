@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Projeto 1",
+    "description": "Este é o primeiro projeto.",
+    "html_url": "https://github.com/seu-usuario/projeto1",
+    "image": "/imagens/projeto1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Projeto 2",
+    "description": "Este é o segundo projeto.",
+    "html_url": "https://github.com/seu-usuario/projeto2",
+    "image": "/imagens/projeto2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Projeto 3",
+    "description": "Este é o terceiro projeto.",
+    "html_url": "https://github.com/seu-usuario/projeto3",
+    "image": "/imagens/projeto3.jpg"
+  }
+]

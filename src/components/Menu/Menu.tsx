@@ -13,10 +13,10 @@ const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
       <nav className={`hidden md:flex md:w-full`}>
         <ul className="flex space-x-4">
           {headerData.links.map((item) => (
-            <li key={item.url}>
+            <li className="px-3" key={item.url}>
               <Link
                 href={item.url}
-                className="text-secondary-foreground hover:text-primary transition-colors"
+                className="text-secondary-foreground uppercase hover:underline hover:underline-offset-8 hover:text-dark-accent  hover transition-colors"
               >
                 {item.label}
               </Link>

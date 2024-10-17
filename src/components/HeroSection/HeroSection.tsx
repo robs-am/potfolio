@@ -12,13 +12,14 @@ export const HeroSection = () => {
     }
   }, []); 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center">
+    <section id="hero" className="min-h-screen flex flex-col items-start justify-center">
     <h1
       ref={heroRef}
-      className="text-6xl font-roboto font-thin tracking-wider text-dark-accent"
+      className="text-6xl font-roboto font-light tracking-wider text-dark-accent"
     >
-      Welcome to My Portfolio
+      Roberta Amaro
     </h1>
+    <span id="subtitle" className="text-4xl font-roboto font-thin tracking-wider">Web Developer</span>
   </section>
   )
 }
