@@ -19,9 +19,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  @apply font-light;
-}
 
 header {
   backdrop-filter: blur(32px);

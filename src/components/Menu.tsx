@@ -3,8 +3,8 @@ import Link from 'next/link';
 import headerData from '../data/headerData.json';
 
 interface MenuProps {
-  isMobile: boolean; 
-  closeMenu: () => void; 
+  isMobile: boolean;
+  closeMenu: () => void;
 }
 
 const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
@@ -27,25 +27,28 @@ const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
       </nav>
 
       {/* Menu Mobile */}
-      {isMobile && (
-        <div className="absolute inset-0 flex items-center justify-center md:hidden" onClick={closeMenu}>
-          <nav className="flex justify-center w-full bg-background/95 backdrop-blur-sm rounded-lg p-4 pt-10">
-            <ul className="flex flex-col items-center space-y-4 w-full absolute">
-              {headerData.links.map((item) => (
-                <li key={item.url}>
-                  <Link
-                    href={item.url}
-                    className="text-secondary-foreground hover:text-primary transition-colors"
-                    onClick={closeMenu} 
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      )}
+      <div
+        className={`fixed inset-0 bg-background/95 backdrop-blur-sm flex items-center justify-center transform transition-transform duration-500 ease-in-out ${
+          isMobile ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
+        } md:hidden`}
+        onClick={closeMenu}
+      >
+        <nav className="rounded-lg p-4 flex justify-center relative w-full">
+          <ul className="flex flex-col items-center space-y-4 absolute mt-10 ">
+            {headerData.links.map((item) => (
+              <li key={item.url}>
+                <Link
+                  href={item.url}
+                  className="text-secondary-foreground hover:text-primary transition-colors"
+                  onClick={closeMenu} // Fecha o menu ao clicar em um link
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </>
   );
 };
