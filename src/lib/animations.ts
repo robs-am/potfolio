@@ -9,10 +9,10 @@ export const animateHeroSection = (hero: HTMLHeadingElement | null) => {
   if (hero) {
     gsap.fromTo(
       hero,
-      { opacity: 0 }, 
-      { opacity: 1, duration: 4, ease: 'power2.out' } 
+      { opacity: 0, x: -900 }, // Ponto inicial com opacidade 0 e posição X -100
+      { opacity: 1, x: 0, duration: 1.5, ease: 'power1.inOut' } // Ponto final com opacidade 1 e posição X 0
     );
-  }
+}
 };
 
 
