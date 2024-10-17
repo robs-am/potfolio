@@ -1,6 +1,8 @@
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Github, Globe } from 'lucide-react';
+
 import {
   Card,
   CardContent,
@@ -38,11 +40,11 @@ export function Projects({ className, ...props }: ProjectProps) {
           </CardContent>
           <CardFooter className="flex gap-4">
             <Button className="w-full">
-              <Check className="mr-2 h-4 w-4" />
+              <Github className="mr-2 h-4 w-4" />
               <a href={project.html_url} target="_blank" rel="noopener noreferrer">Ver no Github</a>
             </Button>
             <Button className="w-full">
-              <Check className="mr-2 h-4 w-4" />
+              <Globe className="mr-2 h-4 w-4" />
               <a href={project.live} target="_blank" rel="noopener noreferrer">Deploy</a>
             </Button>
           </CardFooter>

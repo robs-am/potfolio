@@ -39,7 +39,7 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-background text-dark-primary">
+    <div className="min-h-screen bg-dark-card text-dark-primary">
       <Header />
       <main className="pt-16">
         <HeroSection />

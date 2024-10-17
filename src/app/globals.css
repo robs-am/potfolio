@@ -8,7 +8,7 @@
 
 
 body {
-  @apply bg-dark-background text-white font-robotoMono font-thin;
+  @apply bg-dark-card text-white font-robotoMono font-thin;
  
   
 

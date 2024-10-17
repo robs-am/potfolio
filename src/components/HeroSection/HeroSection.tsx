@@ -15,11 +15,11 @@ export const HeroSection = () => {
     <section id="hero" className="min-h-screen flex flex-col items-start justify-center">
     <h1
       ref={heroRef}
-      className="text-6xl font-roboto font-light tracking-wider text-dark-accent"
+      className="text-8xl font-roboto font-light tracking-wider text-yellow-100 uppercase"
     >
       Roberta Amaro
     </h1>
-    <span id="subtitle" className="text-4xl font-roboto font-thin tracking-wider">Web Developer</span>
+    <span id="subtitle" className="text-7xl font-roboto font-thin tracking-wider uppercase">Front-End Developer</span>
   </section>
   )
 }
