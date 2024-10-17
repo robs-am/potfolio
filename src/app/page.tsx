@@ -1,9 +1,12 @@
 'use client'
 
-import Header from '../components/Header'
+import Header from '../components/Header';
+import Footer from '../components/Footer'
+
 import { useEffect } from 'react'
 
-export default function Portfolio() {
+
+const Portfolio = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('section')
@@ -36,10 +39,10 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Header/>
+      <Header />
       <main className="pt-16">
         <section id="home" className="min-h-screen flex items-center justify-center">
-          <h1 className="text-4xl font-roboto font-thin">Welcome to My Portfolio</h1>
+          <h1 className="text-4xl font-roboto font-thin tracking-wider">Welcome to My Portfolio</h1>
         </section>
         <section id="about" className="min-h-screen flex items-center justify-center bg-secondary/10">
           <div className="max-w-2xl mx-auto text-center">
@@ -70,6 +73,10 @@ export default function Portfolio() {
           </div>
         </section>
       </main>
+      <Footer />
+
     </div>
   )
 }
+
+export default Portfolio

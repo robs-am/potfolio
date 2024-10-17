@@ -1,87 +1,60 @@
+// components/Header.tsx
 'use client'
 
-import { useState, useEffect } from 'react'
-import headerData from '../data/headerData.json'
-import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
-import "../app/globals.css"
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Menu as MenuIcon, X } from 'lucide-react'; // Renomeie o ícone Menu
+import MenuComponent from './Menu'; // Renomeie o componente Menu para MenuComponent
+import "../app/globals.css";
 
-export default function Header() {
-  const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+const Header = () =>  {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY) {
-        setIsVisible(false)
+        setIsVisible(false);
       } else {
-        setIsVisible(true)
+        setIsVisible(true);
       }
 
-      setLastScrollY(currentScrollY)
+      setLastScrollY(currentScrollY);
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [lastScrollY])
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   }
 
   return (
     <header
-      className={`fixed w-full bg-background/80 backdrop-blur-sm z-50 transition-all duration-300 ${isVisible ? 'top-0' : '-top-full'}`}
+      className={`fixed flex items-center w-full bg-background/80 backdrop-blur-sm z-50 transition-all duration-300 ${isVisible ? 'top-0' : '-top-full'}`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center md:justify-center">
         <Link href="/" className="flex items-center">
-          <img src="/svg/logo-portfolio.svg" alt="Logo" className="h-8 mr-2" style={{ backdropFilter: "invert(100%)" }}/>
-                         
+          <span className='tracking-widest font-semibold text-2xl'>RA</span>
         </Link>
-        <nav className="hidden md:block">
-          <ul className="flex space-x-4">
-            {headerData.links.map((item) => (
-              <li key={item.url}>
-                <Link href={item.url} className="text-secondary-foreground hover:text-primary transition-colors hover:underline hover:underline-offset-8 hover:text-dark-accent">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
         <button
           className="md:hidden text-primary"
           onClick={toggleMobileMenu}
           aria-label="Toggle mobile menu"
         >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMobileMenuOpen ? <X size={24} /> : <MenuIcon size={24} />} {/* Use o MenuIcon aqui */}
         </button>
       </div>
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-sm">
-          <nav className="container mx-auto px-4 py-4">
-            <ul className="flex flex-col space-y-4">
-              {headerData.links.map((item) => (
-                <li key={item.url}>
-                  <Link
-                    href={item.url}
-                    className="underline-hover-effect text-secondary-foreground hover:text-primary transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      )}
+      <MenuComponent isMobile={isMobileMenuOpen} closeMenu={() => setIsMobileMenuOpen(false)} /> {/* Use o MenuComponent aqui */}
     </header>
-  )
+  );
 }
+
+export default Header;
