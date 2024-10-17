@@ -1,4 +1,3 @@
-// components/Menu.tsx
 import Link from 'next/link';
 import headerData from '../../data/headerData.json';
 
