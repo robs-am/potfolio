@@ -1,6 +1,6 @@
 // components/Menu.tsx
 import Link from 'next/link';
-import headerData from '../data/headerData.json';
+import headerData from '../../data/headerData.json';
 
 interface MenuProps {
   isMobile: boolean;

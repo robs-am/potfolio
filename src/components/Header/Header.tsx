@@ -3,9 +3,9 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu as MenuIcon, X } from 'lucide-react'; // Renomeie o ícone Menu
-import MenuComponent from './Menu'; // Renomeie o componente Menu para MenuComponent
-import "../app/globals.css";
+import { Menu as MenuIcon, X } from 'lucide-react'; 
+import MenuComponent from '../Menu/Menu'; 
+import "../../app/globals.css";  
 
 const Header = () =>  {
   const [isVisible, setIsVisible] = useState(true);
@@ -27,6 +27,7 @@ const Header = () =>  {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
 
+      
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
