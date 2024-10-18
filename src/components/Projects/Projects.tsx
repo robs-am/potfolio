@@ -25,7 +25,7 @@ interface ProjectProps {
 
 export function Projects({ className, ...props }: ProjectProps) {
   return (
-    <div className="projects-container flex flex-wrap gap-4">
+    <div id="projects" className="projects-container flex flex-wrap gap-4">
       {projectData.map((project) => (
         <Card key={project.id} className={cn("w-[380px]", className)} {...props}>
           <CardHeader>

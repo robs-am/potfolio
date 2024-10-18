@@ -15,7 +15,7 @@ export const HeroSection = () => {
     <section id="hero" className="min-h-screen flex flex-col items-start justify-center">
     <h1
       ref={heroRef}
-      className="text-8xl font-roboto font-light tracking-wider text-yellow-100 uppercase"
+      className="text-8xl font-roboto font-light tracking-wider text-dark-accent uppercase"
     >
       Roberta Amaro
     </h1>

@@ -41,7 +41,7 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-dark-card text-dark-primary">
       <Header />
-      <main className="pt-16">
+      <main className="px-20">
         <HeroSection />
         <AboutMe />
         <Projects id={''} name={''} description={''} html_url={''} image={''} live={''} /> 
