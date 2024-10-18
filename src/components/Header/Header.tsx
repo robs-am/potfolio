@@ -39,9 +39,9 @@ const Header = () =>  {
 
   return (
     <header
-      className={`fixed flex items-center w-full  backdrop-blur-sm z-50 transition-all duration-300 ${isVisible ? 'top-0' : '-top-full'}`}
+      className={`fixed flex items-center w-full  backdrop-blur-sm z-50 transition-all duration-300 md:px-56 ${isVisible ? 'top-0' : '-top-full'}`}
     >
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center md:justify-center">
+      <div className="container mx-auto px-4 py-4 flex justify-between items-center md:justify-start">
         <Link href="/" className="flex items-center">
           <span className='tracking-widest font-semibold text-2xl'>RA</span>
         </Link>

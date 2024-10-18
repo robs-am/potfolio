@@ -10,7 +10,7 @@ const Menu: React.FC<MenuProps> = ({ isMobile, closeMenu }) => {
   return (
     <>
       {/* Menu Desktop */}
-      <nav className={`hidden md:flex md:w-full`}>
+      <nav className={`hidden md:flex md:justify-end md:w-full`}>
         <ul className="flex space-x-4">
           {headerData.links.map((item) => (
             <li className="px-3" key={item.url}>
