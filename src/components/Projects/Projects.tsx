@@ -25,9 +25,9 @@ interface ProjectProps {
 
 export function Projects({ className, ...props }: ProjectProps) {
   return (
-    <div id="projects" className="projects-container flex flex-wrap gap-4">
+    <div id="projects" className="projects-container grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
       {projectData.map((project) => (
-        <Card key={project.id} className={cn("w-[600px]", className)} {...props}>
+        <Card key={project.id} className={cn("w-full", className)} {...props}>
           <CardHeader>
             <CardTitle>{project.name}</CardTitle>
             <CardDescription>{project.description}</CardDescription>
@@ -38,12 +38,12 @@ export function Projects({ className, ...props }: ProjectProps) {
               <a href={project.html_url} target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
             </p>
           </CardContent>
-          <CardFooter className="flex gap-4">
-            <Button className="w-full">
+          <CardFooter className="flex flex-col gap-2">
+            <Button className="w-full flex items-center justify-center">
               <Github className="mr-2 h-4 w-4" />
               <a href={project.html_url} target="_blank" rel="noopener noreferrer">Ver no Github</a>
             </Button>
-            <Button className="w-full">
+            <Button className="w-full flex items-center justify-center">
               <Globe className="mr-2 h-4 w-4" />
               <a href={project.live} target="_blank" rel="noopener noreferrer">Deploy</a>
             </Button>
