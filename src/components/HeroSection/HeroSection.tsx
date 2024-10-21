@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { animateHeroSection } from '../../lib/animations'; // Certifique-se de ajustar o caminho conforme necessário
+import { animateHeroSection } from '../../lib/animations'; 
 
 export const HeroSection = () => {
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -17,7 +17,7 @@ export const HeroSection = () => {
       <h1
         ref={titleRef}
         className="text-8xl font-roboto font-light tracking-wider text-dark-accent uppercase"
-        style={{ opacity: 0, transform: 'translateX(-200px)' }} // Define a opacidade inicial como 0 e posição fora da tela
+        style={{ opacity: 0, transform: 'translateX(-200px)' }} 
       >
         Roberta Amaro
       </h1>
@@ -28,15 +28,14 @@ export const HeroSection = () => {
           top: '51%',
           left: 0,
           width: '100%',
-          backgroundColor: 'currentColor', // Mesma cor do texto
-          zIndex: 1,
+          backgroundColor: 'currentColor', 
         }}
       />
       <span
         ref={subtitleRef}
         id="subtitle"
         className="text-7xl font-roboto font-thin tracking-wider uppercase"
-        style={{ opacity: 0, position: 'relative', zIndex: 2 }} // Define a opacidade inicial como 0
+        style={{ opacity: 0, position: 'relative', zIndex: 2 }} 
       >
         Front-End Developer
       </span>

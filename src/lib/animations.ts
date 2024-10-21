@@ -10,14 +10,14 @@ export const animateHeroSection = (title: HTMLHeadingElement | null, subtitle: H
   if (title) {
     gsap.fromTo(
       title,
-      { opacity: 0, x: -200 }, // Ponto inicial com opacidade 0 e posição X -200
+      { opacity: 0, x: -200 }, 
       { 
         opacity: 1, 
         x: 0, 
         duration: 1.5, 
         ease: 'power1.out',
         onComplete: () => {
-          title.style.opacity = '1'; // Garante que a opacidade seja 100% ao final da animação
+          title.style.opacity = '1'; 
           const rect = document.createElement('div');
           rect.style.position = 'absolute';
           rect.style.background = '#d4edd9';
@@ -28,7 +28,7 @@ export const animateHeroSection = (title: HTMLHeadingElement | null, subtitle: H
           if (rect && subtitle) {
             gsap.fromTo(
               rect,
-              { y: -30, height: 0 }, // Ponto inicial com altura 0
+              { y: -30, height: 0 }, 
               { 
                 y: 0, 
                 height: subtitle.offsetHeight, 
@@ -43,12 +43,12 @@ export const animateHeroSection = (title: HTMLHeadingElement | null, subtitle: H
                     duration: 0.5,
                     ease: 'power1.out',
                     onUpdate: () => {
-                      rect.style.top = `${subtitle.offsetHeight - rect.offsetHeight}px`; // Atualiza a posição do topo
+                      rect.style.top = `${subtitle.offsetHeight - rect.offsetHeight}px`; 
                     },
                     onComplete: () => {
-                      subtitle.style.opacity = '1'; // Revela o texto do span
-                      subtitle.style.transform = 'translateY(0)'; // Reseta a posição do span
-                      current.removeChild(rect); // Remove o retângulo após a animação
+                      subtitle.style.opacity = '1'; 
+                      subtitle.style.transform = 'translateY(0)'; 
+                      current.removeChild(rect); 
                     }
                   });
                 }
