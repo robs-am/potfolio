@@ -27,7 +27,7 @@ export function Projects({ className, ...props }: ProjectProps) {
   return (
     <div id="projects" className="projects-container flex flex-wrap gap-4">
       {projectData.map((project) => (
-        <Card key={project.id} className={cn("w-[380px]", className)} {...props}>
+        <Card key={project.id} className={cn("w-[600px]", className)} {...props}>
           <CardHeader>
             <CardTitle>{project.name}</CardTitle>
             <CardDescription>{project.description}</CardDescription>
