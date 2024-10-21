@@ -6,6 +6,7 @@ import AboutMe from '@/components/AboutMe/AboutMe';
 import { HeroSection } from '@/components/HeroSection/HeroSection';
 import {Projects} from '@/components/Projects/Projects'; // Verifique aqui se é importado corretamente
 import { useEffect } from 'react';
+import  Contact  from '../components/Contact/Contact'
 
 const Portfolio = () => {
 
@@ -39,18 +40,13 @@ const Portfolio = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-dark-card text-dark-primary">
+    <div className="bg-dark-card text-dark-primary">
       <Header />
       <main className="px-20">
         <HeroSection />
         <AboutMe />
         <Projects id={''} name={''} description={''} html_url={''} image={''} live={''} /> 
-        <section id="contact" className="min-h-screen flex items-center justify-center ">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl mb-4">Contact Me</h2>
-            <p>You can add your contact information or a contact form here.</p>
-          </div>
-        </section>
+        <Contact />
       </main>
       <Footer />
     </div>

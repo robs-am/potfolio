@@ -36,6 +36,17 @@ header {
   }
 }
 
+@keyframes move-it {
+  0% {
+    background-position: initial;
+  }
+  100% {
+    background-position: 100px 0px;
+  }
+}
+
+
+
 
 @layer base {
   :root {
